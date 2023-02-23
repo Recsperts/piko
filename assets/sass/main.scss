@@ -1,22 +1,12 @@
-/* Can be forced with data-theme="light" */
-[data-theme="light"],
-:root:not([data-theme="dark"]) {
-  --muted-color: #4b555c !important;
-  --link-color: #27455a !important;
-}
+$primary-500: #89be9f;
+$primary-600: #a4e1bd;
+$primary-700: #a4e1bd;
 
-/* Automatically enabled if user has Dark mode enabled */
-@media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --muted-color: #8fa3b1 !important;
-    --link-color: #4c82a8 !important;
-  }
-}
+@import "../scss/pico.scss";
 
-/* Enabled if forced with data-theme="dark" */
-[data-theme="dark"] {
-  --muted-color: #8fa3b1 !important;
-  --link-color: #4c82a8 !important;
+[data-theme="dark"],
+:root:not([data-theme="light"]) {
+  --background-color: #000 !important;
 }
 
 :root {
