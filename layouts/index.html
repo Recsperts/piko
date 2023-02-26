@@ -1,8 +1,12 @@
 {{ define "main" }}
 {{- if (.Site.Params.homepage.showHeroSection) }}
-<section class="hero" style="background-image:linear-gradient(rgba(20,30,38, 0.9), rgba(24,44,54, 0.8)),
- url('{{.Site.Params.homepage.heroBackgroundImage}}'); ">
-    <header class="container">
+<section class="hero">
+    {{- if (.Site.Params.homepage.heroBackgroundVideo) }}
+    <video autoplay muted loop id="hero-background-video">
+        <source src="{{ .Site.Params.homepage.heroBackgroundVideo }}" type="video/mp4">
+    </video>
+    {{- end }}
+    <header class="container" id="hero-section">
         <hgroup>
             <h1>{{.Site.Params.homepage.heroUpperTitle}}</h1>
             <h1>{{.Site.Params.homepage.heroTitle}}</h1>
