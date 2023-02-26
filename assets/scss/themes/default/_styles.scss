@@ -159,8 +159,6 @@
 // Link
 a {
   --text-decoration: none;
-  --link-color: var(--primary);
-  --link-hover-color: var(--primary-hover);
 
   // Secondary & Contrast
   @if $enable-classes {

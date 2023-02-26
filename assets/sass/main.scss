@@ -1,6 +1,8 @@
+$primary-300: #2f6e49;
+$primary-400: #55966f;
 $primary-500: #89be9f;
 $primary-600: #a4e1bd;
-$primary-700: #a4e1bd;
+$primary-700: #b9f1d0;
 
 @import "../scss/pico.scss";
 
@@ -77,7 +79,7 @@ a {
   text-decoration: none !important;
   color: var(--link-color);
 
-  :hover {
+  &:not([role="button"]):hover {
     color: var(--link-hover-color);
   }
 }

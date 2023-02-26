@@ -30,25 +30,22 @@
     {{- $page_url:= $currentPage.Permalink | absLangURL }}
     {{- $is_search := eq ($.Site.GetPage .KeyName).Layout `search` }}
     <li>
-      {{- if eq .Pre "button" }}
-        <a role="button" href="{{ .URL | absLangURL }}">
-          {{ .Title }}
-        </a>
+      {{- if eq .Title "JOIN US" }}
+          <a href="{{ .URL }}" title="{{ .Name | default .Name }}" role="button">
       {{- else }}
-          <a
-            href="{{ .URL }}" title="{{ .Name | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
+          <a href="{{ .URL }}" title="{{ .Name | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
             {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}
           >
-            {{- if and (.Pre) (ne .Pre "button") }}
+            {{- if and (.Pre) }}
               <i data-feather="{{ .Pre | safeHTML }}"></i>
             {{ end }}
-            <span {{- if and (eq $menu_item_url $page_url) (ne $currentPage.RelPermalink "/") }} class="menu-active" {{- end }}>
-              {{- if .Title }}
-                {{ .Title | safeHTML }}
-              {{ end }}
-            </span>
-          </a>
       {{- end }}
+          <span {{- if and (eq $menu_item_url $page_url) (ne $currentPage.RelPermalink "/") }} class="menu-active" {{- end }}>
+          {{- if .Title }}
+          {{ .Title | safeHTML }}
+          {{ end }}
+          </span>
+        </a>
     </li>
     {{ end }}
   </ul>
