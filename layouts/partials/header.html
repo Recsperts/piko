@@ -36,10 +36,10 @@
       >
       {{- if .Pre }}
       <i data-feather="{{ .Pre | safeHTML }}"></i>
-      {{ end }} 
-        <span {{- if eq $menu_item_url $page_url }} class="menu-active" {{- end }}>
+      {{ end }}
+        <span {{- if and (eq $menu_item_url $page_url) (ne $currentPage.RelPermalink "/") }} class="menu-active" {{- end }}>
           {{- if .Title }}
-          {{ .Title | safeHTML }}     
+          {{ .Title | safeHTML }}
           {{ end }}
         </span>
       </a>
