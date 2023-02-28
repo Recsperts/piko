@@ -20,7 +20,7 @@
         </article>
       {{- end }}
       
-      {{if .Params.Cover.Image }}<img
+      {{if and (.Site.Params.ShowCoverInsideContent) (.Params.Cover.Image) }}<img
         class="cover"
         src="{{.Params.Cover.Image | absURL}}"
         width="600"
