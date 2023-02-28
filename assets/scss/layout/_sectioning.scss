@@ -68,3 +68,7 @@ main {
     }
   }
 }
+
+#{$semantic-root-element} > main {
+  margin-top: 20px;
+}
