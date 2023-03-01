@@ -331,6 +331,10 @@ a[role='button'],
   position: absolute;
   top: 150px;
   left: 200px;
+  @media (min-width: 0px) and (max-width: 576px) {
+    position: static;
+    display: none;
+  }
 }
 
 .r-circle {
@@ -350,6 +354,7 @@ a[role='button'],
 .r-what-we-do {
   padding-top: var(--block-spacing-vertical);
   background-color: #a0d5b6;
+  text-align: justify;
   p, h2 {
     color: #333;
   }
@@ -358,6 +363,14 @@ a[role='button'],
     display: grid;
     grid-template-columns: 280px 3fr;
     grid-template-rows: 1fr;
+
+    @media (min-width: 0px) and (max-width: 576px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      .r-250 {
+        width: 100%;
+      }
+    }
   }
 }
 
