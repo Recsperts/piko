@@ -30,6 +30,39 @@
 </section>
 {{ end }}
 
+{{- if (.Site.Params.homepage.whatWeDo) }}
+<a id="whatwedo"></a>
+<section class="r-what-we-do">
+    <div class="container">
+        <figure>
+            <img class="r-circle r-250" src="{{.Site.Params.homepage.whatWeDo.imageUrl}}" layout="responsive" alt="{{.Site.Params.homepage.whatWeDo.alt}}" />
+        </figure>
+        <div>
+            <div class="text-center">
+                <h2>{{.Site.Params.homepage.whatWeDo.Title}}</h2>
+            </div>
+            <p>{{.Site.Params.homepage.whatWeDo.Text}}</p>
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{- if (.Site.Params.homepage.howItWorks) }}
+<a id="about"></a>
+<section>
+    <hgroup class="text-center">
+        <h2>{{.Site.Params.homepage.howItWorks.title}}</h2>
+        <h3>{{.Site.Params.homepage.howItWorks.description}}</h3>
+    </hgroup>
+    <div class="container">
+        <div class="grid">
+            <video controls playsinline="playsinline" width="100%">
+                <source src="{{.Site.Params.homepage.howItWorks.videoUrl}}" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</section>
+{{ end }}
 
 {{- if (.Site.Params.homepage.showTeamSection) }}
 <a id="team"></a>
@@ -40,37 +73,16 @@
     </hgroup>
     <div class="container">
         <div class="grid">
-                {{ range .Site.Params.homepage.team }}
-                <a class="portfolio-post" href="">
-                    <figure>
-                        <img
-                                src="{{.imageUrl}}"
-                                layout="responsive"
-                                alt="{{.alt}}"
-                        />
-                    </figure>
-                    <hgroup class="text-center">
-                        <h4>{{.name}}</h4>
-                    </hgroup>
-                </a>
-                {{ end }}
-        </div>
-    </div>
-</section>
-{{ end }}
-
-{{- if (.Site.Params.homepage.showAboutSection) }}
-<a id="about"></a>
-<section>
-    <hgroup class="text-center">
-        <h2>{{.Site.Params.homepage.aboutTitle}}</h2>
-        <h3>{{.Site.Params.homepage.aboutDescription}}</h3>
-    </hgroup>
-    <div class="container">
-        <div class="grid">
-            <video controls playsinline="playsinline" width="100%">
-                <source src="{{.Site.Params.homepage.aboutVideoUrl}}" type="video/mp4">
-            </video>
+            {{ range .Site.Params.homepage.team }}
+            <a class="portfolio-post" href="">
+                <figure>
+                    <img src="{{.imageUrl}}" layout="responsive" alt="{{.alt}}" />
+                </figure>
+                <hgroup class="text-center">
+                    <h4>{{.name}}</h4>
+                </hgroup>
+            </a>
+            {{ end }}
         </div>
     </div>
 </section>

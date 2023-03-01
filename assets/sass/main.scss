@@ -332,3 +332,35 @@ a[role='button'],
   top: 150px;
   left: 200px;
 }
+
+.r-circle {
+  border-radius: 50%;
+}
+
+.r-200 {
+    width: 200px;
+    height: 200px;
+}
+
+.r-250 {
+  width: 250px;
+  height: 250px;
+}
+
+.r-what-we-do {
+  padding-top: var(--block-spacing-vertical);
+  background-color: #a0d5b6;
+  p, h2 {
+    color: #333;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 280px 3fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+section.hero {
+  margin-bottom: 0;
+}
